@@ -97,6 +97,10 @@
                         <svg class="w-4 h-4 text-zinc-400 dark:text-zinc-200 transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                             <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
                         </svg>
+                        
+                        <button id="lang-toggle" class="text-sm font-bold text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors duration-300">
+                            <span id="lang-fr" class="text-zinc-900 dark:text-zinc-100">FR</span> | <span id="lang-en">EN</span>
+                        </button>
                     </div>
 
                     <a href="#" class="text-sm font-medium text-zinc-600 dark:text-zinc-300 px-5 py-2.5 hover:text-zinc-900 dark:hover:text-zinc-50 smooth-hover">Mon CV</a>
@@ -264,13 +268,13 @@
                         <span class="px-3 py-1 text-xs font-medium text-zinc-700 dark:text-zinc-300 border border-black/10 dark:border-zinc-50/10 bg-black/5 dark:bg-zinc-50/5 rounded-full">Vanilla JS</span>
                         <span class="px-3 py-1 text-xs font-medium text-zinc-700 dark:text-zinc-300 border border-black/10 dark:border-zinc-50/10 bg-black/5 dark:bg-zinc-50/5 rounded-full">PHP / Node.js</span>
                         <span class="px-3 py-1 text-xs font-medium text-zinc-700 dark:text-zinc-300 border border-black/10 dark:border-zinc-50/10 bg-black/5 dark:bg-zinc-50/5 rounded-full">MySQL</span>
-                        <span class="px-3 py-1 text-xs font-medium text-zinc-700 dark:text-zinc-300 border border-black/10 dark:border-zinc-50/10 bg-black/5 dark:bg-zinc-50/5 rounded-full">HTML5 Canvas</span>
+                        <span class="px-3 py-1 text-xs font-medium text-zinc-700 dark:text-zinc-300 border border-black/10 dark:border-zinc-50/10 bg-black/5 dark:bg-zinc-50/5 rounded-full">Docker</span>
                     </div>
                     <h3 class="text-3xl font-bold text-zinc-900 dark:text-zinc-100 tracking-tight">Camagru</h3>
                     <p class="text-lg text-zinc-700 dark:text-zinc-300 font-medium">Application de montage photo et galerie sociale</p>
                     <div class="space-y-4 text-zinc-600 dark:text-zinc-400 text-sm font-light leading-relaxed">
-                        <p><strong class="text-zinc-900 dark:text-zinc-200 font-semibold">Le défi :</strong> Développer un clone miniature d'Instagram "from scratch" sans framework, gérant la capture vidéo, l'assemblage de calques et les interactions (likes, commentaires).</p>
-                        <p><strong class="text-zinc-900 dark:text-zinc-200 font-semibold">Technique :</strong> Utilisation de l'API WebRTC / `getUserMedia` pour la webcam et de l'API Canvas pour la fusion des images côté client. Sécurisation complète (authentification, hachage, failles XSS/SQLi) avec un mini-framework MVC développé sur mesure.</p>
+                        <p><strong class="text-zinc-900 dark:text-zinc-200 font-semibold">Le défi :</strong> Développer un clone miniature d'Instagram "from scratch" sans framework, gérant la capture vidéo, l'assemblage de calques, les interactions sociales et l'envoi d'emails transactionnels.</p>
+                        <p><strong class="text-zinc-900 dark:text-zinc-200 font-semibold">Technique :</strong> Architecture MVC sur mesure et infrastructure conteneurisée (Docker). Flux webcam géré via l'API native <code>getUserMedia</code>, mais traitement et fusion des images calculés rigoureusement côté serveur. Sécurisation totale (authentification, hachage, failles XSS/SQLi) développée de zéro.</p>
                     </div>
                     <a href="https://github.com/jecointr/camagru" target="_blank" class="inline-flex items-center text-sm font-semibold text-zinc-900 dark:text-zinc-100 hover:text-zinc-500 dark:hover:text-zinc-400 smooth-hover mt-4 border-b border-zinc-900 dark:border-zinc-100 hover:border-zinc-500 dark:hover:border-zinc-400 pb-0.5">
                         Découvrir le code source
