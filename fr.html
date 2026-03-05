@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" class="dark">
+<html lang="fr" class="dark scroll-pt-24 scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,7 +36,7 @@
         }
     </script>
     <style>
-        html { overflow-y: scroll; }
+        html { overflow-y: scroll;}
         body { scroll-behavior: smooth; }
         
         .bg-grid {
@@ -63,23 +63,46 @@
     <div class="fixed top-[-20%] left-[-10%] w-[50%] h-[50%] bg-zinc-300/30 dark:bg-zinc-600/10 rounded-full blur-[150px] z-[-1] pointer-events-none transition-colors duration-300"></div>
     <div class="fixed bottom-[-20%] right-[-10%] w-[50%] h-[50%] bg-zinc-300/30 dark:bg-zinc-600/10 rounded-full blur-[150px] z-[-1] pointer-events-none transition-colors duration-300"></div>
 
-    <nav class="sticky top-0 z-50 w-full bg-zinc-100/80 dark:bg-background/70 backdrop-blur-xl border-b border-black/5 dark:border-white/5 transition-colors duration-300">
+    <nav class="fixed top-0 z-50 w-full bg-zinc-100/90 dark:bg-background/90 backdrop-blur-xl border-b border-black/5 dark:border-white/5 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
+            <div class="flex justify-between items-center h-24"> 
                 <div class="flex-shrink-0 flex items-center">
                     <a href="#" class="text-xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
                         jecointr<span class="text-zinc-500 font-medium">.dev</span>
                     </a>
                 </div>
                 
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#about" class="text-sm font-medium text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 smooth-hover">À propos</a>
-                    <a href="#services" class="text-sm font-medium text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 smooth-hover">Expertise</a>
-                    <a href="#projects" class="text-sm font-medium text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 smooth-hover">Réalisations</a>
+                <div class="hidden md:flex flex-1 max-w-md mx-12 items-center relative h-full">
+                    <div class="w-full relative">
+                        <div id="progress-indicator" class="absolute -top-7 text-[10px] font-bold text-zinc-900 dark:text-zinc-100 transform -translate-x-1/2 bg-zinc-200/50 dark:bg-zinc-800/50 px-2 py-0.5 rounded-full backdrop-blur-sm transition-all duration-75">0%</div>
+                        
+                        <div class="h-1 w-full bg-zinc-200 dark:bg-zinc-800 rounded-full relative">
+                            <div id="progress-fill" class="absolute top-0 left-0 h-full bg-zinc-900 dark:bg-zinc-100 rounded-full w-0" style="transition: width 0.1s ease-out;"></div>
+                            
+                            <a href="#about" class="checkpoint absolute top-1/2 -translate-y-1/2 -translate-x-1/2 flex flex-col items-center group outline-none" data-target="about">
+                                <div class="indicator-dot w-3 h-3 rounded-full bg-zinc-300 dark:bg-zinc-700 transition-all duration-300 z-10 group-hover:scale-125 border-2 border-zinc-100 dark:border-background"></div>
+                                <span class="absolute top-4 text-xs font-semibold text-zinc-400 dark:text-zinc-500 group-hover:text-zinc-900 dark:group-hover:text-zinc-100 transition-colors whitespace-nowrap label-text">À propos</span>
+                            </a>
+                            
+                            <a href="#services" class="checkpoint absolute top-1/2 -translate-y-1/2 -translate-x-1/2 flex flex-col items-center group outline-none" data-target="services">
+                                <div class="indicator-dot w-3 h-3 rounded-full bg-zinc-300 dark:bg-zinc-700 transition-all duration-300 z-10 group-hover:scale-125 border-2 border-zinc-100 dark:border-background"></div>
+                                <span class="absolute top-4 text-xs font-semibold text-zinc-400 dark:text-zinc-500 group-hover:text-zinc-900 dark:group-hover:text-zinc-100 transition-colors whitespace-nowrap label-text">Expertise</span>
+                            </a>
+                            
+                            <a href="#projects" class="checkpoint absolute top-1/2 -translate-y-1/2 -translate-x-1/2 flex flex-col items-center group outline-none" data-target="projects">
+                                <div class="indicator-dot w-3 h-3 rounded-full bg-zinc-300 dark:bg-zinc-700 transition-all duration-300 z-10 group-hover:scale-125 border-2 border-zinc-100 dark:border-background"></div>
+                                <span class="absolute top-4 text-xs font-semibold text-zinc-400 dark:text-zinc-500 group-hover:text-zinc-900 dark:group-hover:text-zinc-100 transition-colors whitespace-nowrap label-text">Réalisations</span>
+                            </a>
+
+                            <a href="#contact" class="checkpoint absolute top-1/2 -translate-y-1/2 -translate-x-1/2 flex flex-col items-center group outline-none" data-target="contact">
+                                <div class="indicator-dot w-3 h-3 rounded-full bg-zinc-300 dark:bg-zinc-700 transition-all duration-300 z-10 group-hover:scale-125 border-2 border-zinc-100 dark:border-background"></div>
+                                <span class="absolute top-4 text-xs font-semibold text-zinc-400 dark:text-zinc-500 group-hover:text-zinc-900 dark:group-hover:text-zinc-100 transition-colors whitespace-nowrap label-text">Contact</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="hidden md:flex items-center space-x-4">
-                    
                     <div class="flex items-center space-x-6 mr-4">
                         <div class="flex items-center space-x-2">
                             <svg class="w-4 h-4 text-zinc-800 dark:text-zinc-600 transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -108,238 +131,280 @@
                             <a href="index.html" class="px-2.5 py-1 rounded-full text-xs font-semibold text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-all duration-300">EN</a>
                             <span class="px-2.5 py-1 rounded-full bg-zinc-50 dark:bg-zinc-950 text-xs font-bold text-zinc-900 dark:text-zinc-100 shadow-sm transition-all duration-300 cursor-default">FR</span>
                             <a href="es.html" class="px-2.5 py-1 rounded-full text-xs font-semibold text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-all duration-300">ES</a>
-                        </div>
+                        </div>  
                     </div>
                 </div>
             </div>
         </div>
     </nav>
 
-    <section id="about" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 lg:pt-20 pb-24 flex flex-col-reverse lg:flex-row items-center gap-16 relative">
-        <div class="lg:w-3/5 space-y-8 relative z-10">
-            <div class="inline-flex items-center rounded-full px-3 py-1 text-xs font-medium text-zinc-600 dark:text-zinc-300 bg-black/5 dark:bg-zinc-50/5 border border-black/10 dark:border-zinc-50/10 backdrop-blur-md">
-                <span class="w-1.5 h-1.5 rounded-full bg-zinc-600 dark:bg-zinc-300 mr-2 animate-pulse"></span> Disponible
-            </div>
-            
-            <h1 class="text-5xl lg:text-7xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-br from-zinc-900 via-zinc-600 to-zinc-400 dark:from-zinc-100 dark:via-zinc-300 dark:to-zinc-500 leading-[1.1] pb-2">
-                Je crée des applications web d'exception.
-            </h1>
-            
-            <p class="text-lg text-zinc-600 dark:text-zinc-400 max-w-xl leading-relaxed font-light">
-                Bonjour, je suis Jérémy, développeur Full-Stack. J'allie un design épuré à des architectures complexes (Node.js & React) pour concevoir des produits digitaux performants, scalables et durables.
-            </p>
-            
-            <div class="flex flex-wrap gap-4 pt-4">
-                <a href="#projects" class="px-6 py-3 text-sm font-semibold rounded-full text-zinc-50 dark:text-background bg-zinc-900 dark:bg-zinc-100 hover:bg-black dark:hover:bg-zinc-50 hover:shadow-[0_0_20px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] smooth-hover">
-                    Explorer mes travaux
-                </a>
-                <a href="https://github.com/jecointr" target="_blank" class="px-6 py-3 text-sm font-medium rounded-full text-zinc-700 dark:text-zinc-300 bg-black/5 dark:bg-zinc-50/5 hover:bg-black/10 dark:hover:bg-zinc-50/10 border border-black/5 dark:border-zinc-50/5 backdrop-blur-md smooth-hover flex items-center gap-2 group">
-                    <svg class="h-4 w-4 text-zinc-600 dark:text-zinc-400 group-hover:text-zinc-900 dark:group-hover:text-zinc-100 smooth-hover" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/></svg>
-                    GitHub
-                </a>
-            </div>
-        </div>
-        
-        <div class="lg:w-2/5 w-full flex justify-center lg:justify-end relative lg:-translate-x-12">
-            <div class="relative w-64 h-64 lg:w-72 lg:h-72 animate-[translate-y-[-10px]_ease-in-out_infinite_alternate]" style="animation: float 8s ease-in-out infinite;">
-                <div class="absolute inset-0 bg-zinc-300/50 dark:bg-zinc-600/20 rounded-full blur-3xl opacity-50"></div>
-                <div class="relative w-full h-full rounded-full border border-black/10 dark:border-zinc-50/10 bg-gradient-to-b from-black/5 dark:from-zinc-50/5 to-transparent backdrop-blur-xl shadow-[inset_0_0_40px_rgba(0,0,0,0.02)] dark:shadow-[inset_0_0_40px_rgba(255,255,255,0.02)] flex items-center justify-center p-2">
-                    <div class="w-full h-full rounded-full border border-black/5 dark:border-zinc-50/5 bg-zinc-50 dark:bg-background flex items-center justify-center overflow-hidden group">
-                        
-                        <img 
-                            src="./wa.jpeg"
-                            alt="Portrait de Jérémy" 
-                            class="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 smooth-hover"
-                        />
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="border-y border-black/5 dark:border-zinc-50/5 bg-zinc-100/50 dark:bg-surface/30 py-8 relative z-10 transition-colors duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 text-zinc-400 dark:text-zinc-500 font-medium">
-                <span class="hover:text-zinc-900 dark:hover:text-zinc-200 smooth-hover cursor-default">React</span>
-                <span class="hover:text-zinc-900 dark:hover:text-zinc-200 smooth-hover cursor-default">TypeScript</span>
-                <span class="hover:text-zinc-900 dark:hover:text-zinc-200 smooth-hover cursor-default">Node.js</span>
-                <span class="hover:text-zinc-900 dark:hover:text-zinc-200 smooth-hover cursor-default">NestJS</span>
-                <span class="hover:text-zinc-900 dark:hover:text-zinc-200 smooth-hover cursor-default">Fastify</span>
-                <span class="hover:text-zinc-900 dark:hover:text-zinc-200 smooth-hover cursor-default">Tailwind</span>
-                <span class="hover:text-zinc-900 dark:hover:text-zinc-200 smooth-hover cursor-default">PostgreSQL</span>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="py-32 relative z-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="mb-16">
-                <h2 class="text-3xl font-bold text-zinc-900 dark:text-zinc-100 tracking-tight">Expertise Technique</h2>
-                <p class="mt-4 text-zinc-600 dark:text-zinc-400 font-light">Maîtrise de bout en bout de l'architecture web.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-zinc-50 dark:bg-surface/50 border border-black/5 dark:border-zinc-50/5 hover:border-black/15 dark:hover:border-zinc-50/15 shadow-md hover:shadow-lg dark:shadow-none dark:hover:shadow-none p-8 rounded-2xl smooth-hover group transition-all duration-300">
-                    <div class="w-10 h-10 mb-6 text-zinc-900 dark:text-zinc-100">
-                        <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" /></svg>
-                    </div>
-                    <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-3">Front-end Ingénierie</h3>
-                    <p class="text-zinc-600 dark:text-zinc-400 font-light text-sm leading-relaxed">Développement d'interfaces web réactives, fluides et "pixel-perfect" avec React, en plaçant l'expérience utilisateur (UX) au centre du code.</p>
-                </div>
-
-                <div class="bg-zinc-50 dark:bg-surface/50 border border-black/5 dark:border-zinc-50/5 hover:border-black/15 dark:hover:border-zinc-50/15 shadow-md hover:shadow-lg dark:shadow-none dark:hover:shadow-none p-8 rounded-2xl smooth-hover group transition-all duration-300">
-                    <div class="w-10 h-10 mb-6 text-zinc-900 dark:text-zinc-100">
-                        <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25-4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" /></svg>
-                    </div>
-                    <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-3">Architecture Back-end</h3>
-                    <p class="text-zinc-600 dark:text-zinc-400 font-light text-sm leading-relaxed">Conception d'API robustes, sécurisées et scalables sous Node.js. Optimisation avancée des bases de données relationnelles (PostgreSQL).</p>
-                </div>
-
-                <div class="bg-zinc-50 dark:bg-surface/50 border border-black/5 dark:border-zinc-50/5 hover:border-black/15 dark:hover:border-zinc-50/15 shadow-md hover:shadow-lg dark:shadow-none dark:hover:shadow-none p-8 rounded-2xl smooth-hover group transition-all duration-300">
-                    <div class="w-10 h-10 mb-6 text-zinc-900 dark:text-zinc-100">
-                        <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></svg>
-                    </div>
-                    <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-3">Performance & Temps Réel</h3>
-                    <p class="text-zinc-600 dark:text-zinc-400 font-light text-sm leading-relaxed">Mise en place de WebSockets, transcodage vidéo à la volée, et optimisation des temps de réponse pour des applications hautement interactives.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="py-32 relative z-10 border-t border-black/5 dark:border-zinc-50/5 transition-colors duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-32">
-            
-            <div>
-                <h2 class="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">Réalisations Phares</h2>
-                <p class="mt-4 text-zinc-600 dark:text-zinc-400 font-light">Des systèmes complexes mis en production.</p>
-            </div>
-
-            <div class="flex flex-col lg:flex-row items-center gap-16">
-                <div class="lg:w-1/2 space-y-6">
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 text-xs font-medium text-zinc-700 dark:text-zinc-300 border border-black/10 dark:border-zinc-50/10 bg-black/5 dark:bg-zinc-50/5 rounded-full">NestJS / Fastify</span>
-                        <span class="px-3 py-1 text-xs font-medium text-zinc-700 dark:text-zinc-300 border border-black/10 dark:border-zinc-50/10 bg-black/5 dark:bg-zinc-50/5 rounded-full">React 19</span>
-                        <span class="px-3 py-1 text-xs font-medium text-zinc-700 dark:text-zinc-300 border border-black/10 dark:border-zinc-50/10 bg-black/5 dark:bg-zinc-50/5 rounded-full">Prisma</span>
-                        <span class="px-3 py-1 text-xs font-medium text-zinc-700 dark:text-zinc-300 border border-black/10 dark:border-zinc-50/10 bg-black/5 dark:bg-zinc-50/5 rounded-full">FFmpeg & BitTorrent</span>
-                    </div>
-                    <h3 class="text-3xl font-bold text-zinc-900 dark:text-zinc-100 tracking-tight">Hypertube</h3>
-                    <p class="text-lg text-zinc-700 dark:text-zinc-300 font-medium">Plateforme de streaming vidéo P2P</p>
-                    <div class="space-y-4 text-zinc-600 dark:text-zinc-400 text-sm font-light leading-relaxed">
-                        <p><strong class="text-zinc-900 dark:text-zinc-200 font-semibold">Le défi :</strong> Développer un clone de Netflix permettant de streamer des films directement depuis le réseau BitTorrent, avec authentification OAuth.</p>
-                        <p><strong class="text-zinc-900 dark:text-zinc-200 font-semibold">Technique :</strong> Moteur Node.js de téléchargement de fragments P2P. Transcodage vidéo à la volée via <code>fluent-ffmpeg</code> (flags <code>faststart</code>) pour une lecture HTTP instantanée sans attendre la fin du téléchargement.</p>
-                    </div>
-                    <a href="https://github.com/jecointr/hypertube" target="_blank" class="inline-flex items-center text-sm font-semibold text-zinc-900 dark:text-zinc-100 hover:text-zinc-500 dark:hover:text-zinc-400 smooth-hover mt-4 border-b border-zinc-900 dark:border-zinc-100 hover:border-zinc-500 dark:hover:border-zinc-400 pb-0.5">
-                        Découvrir le code source
-                    </a>
-                </div>
-                <div class="lg:w-1/2 w-full">
-                    <div class="bg-zinc-50 dark:bg-surface border border-black/5 dark:border-zinc-50/5 aspect-[4/3] rounded-2xl flex items-center justify-center overflow-hidden relative group transition-all duration-300 shadow-md hover:shadow-lg dark:shadow-none dark:hover:shadow-none">
-                        <div class="absolute inset-0 bg-gradient-to-t from-zinc-100 dark:from-background to-transparent opacity-50"></div>
-                        <span class="text-zinc-400 dark:text-zinc-600 font-light tracking-widest text-sm uppercase group-hover:scale-105 smooth-hover">[Interface Hypertube]</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="flex flex-col lg:flex-row-reverse items-center gap-16">
-                <div class="lg:w-1/2 space-y-6">
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 text-xs font-medium text-zinc-700 dark:text-zinc-300 border border-black/10 dark:border-zinc-50/10 bg-black/5 dark:bg-zinc-50/5 rounded-full">Node.js</span>
-                        <span class="px-3 py-1 text-xs font-medium text-zinc-700 dark:text-zinc-300 border border-black/10 dark:border-zinc-50/10 bg-black/5 dark:bg-zinc-50/5 rounded-full">React 19 & Tailwind</span>
-                        <span class="px-3 py-1 text-xs font-medium text-zinc-700 dark:text-zinc-300 border border-black/10 dark:border-zinc-50/10 bg-black/5 dark:bg-zinc-50/5 rounded-full">Socket.io</span>
-                        <span class="px-3 py-1 text-xs font-medium text-zinc-700 dark:text-zinc-300 border border-black/10 dark:border-zinc-50/10 bg-black/5 dark:bg-zinc-50/5 rounded-full">WebRTC</span>
-                    </div>
-                    <h3 class="text-3xl font-bold text-zinc-900 dark:text-zinc-100 tracking-tight">Matcha</h3>
-                    <p class="text-lg text-zinc-700 dark:text-zinc-300 font-medium">Application de rencontre & Visio P2P</p>
-                    <div class="space-y-4 text-zinc-600 dark:text-zinc-400 text-sm font-light leading-relaxed">
-                        <p><strong class="text-zinc-900 dark:text-zinc-200 font-semibold">Le défi :</strong> Créer un algorithme de matching complet basé sur la distance, les intérêts et un score de popularité, avec messagerie instantanée.</p>
-                        <p><strong class="text-zinc-900 dark:text-zinc-200 font-semibold">Technique :</strong> Requêtes spatiales performantes via l'extension PostgreSQL <code>earthdistance</code>. Serveur de signaling WebRTC (via Socket.io et simple-peer) permettant des appels vidéo en temps réel de pair à pair.</p>
-                    </div>
-                    <a href="https://github.com/jecointr/matcha" target="_blank" class="inline-flex items-center text-sm font-semibold text-zinc-900 dark:text-zinc-100 hover:text-zinc-500 dark:hover:text-zinc-400 smooth-hover mt-4 border-b border-zinc-900 dark:border-zinc-100 hover:border-zinc-500 dark:hover:border-zinc-400 pb-0.5">
-                        Découvrir le code source
-                    </a>
-                </div>
-                <div class="lg:w-1/2 w-full">
-                    <div class="bg-zinc-50 dark:bg-surface border border-black/5 dark:border-zinc-50/5 aspect-[4/3] rounded-2xl flex items-center justify-center overflow-hidden relative group transition-all duration-300 shadow-md hover:shadow-lg dark:shadow-none dark:hover:shadow-none">
-                        <div class="absolute inset-0 bg-gradient-to-t from-zinc-100 dark:from-background to-transparent opacity-50"></div>
-                         <span class="text-zinc-400 dark:text-zinc-600 font-light tracking-widest text-sm uppercase group-hover:scale-105 smooth-hover">[Interface Matcha]</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="flex flex-col lg:flex-row items-center gap-16">
-                <div class="lg:w-1/2 space-y-6">
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 text-xs font-medium text-zinc-700 dark:text-zinc-300 border border-black/10 dark:border-zinc-50/10 bg-black/5 dark:bg-zinc-50/5 rounded-full">Vanilla JS</span>
-                        <span class="px-3 py-1 text-xs font-medium text-zinc-700 dark:text-zinc-300 border border-black/10 dark:border-zinc-50/10 bg-black/5 dark:bg-zinc-50/5 rounded-full">PHP / Node.js</span>
-                        <span class="px-3 py-1 text-xs font-medium text-zinc-700 dark:text-zinc-300 border border-black/10 dark:border-zinc-50/10 bg-black/5 dark:bg-zinc-50/5 rounded-full">MySQL</span>
-                        <span class="px-3 py-1 text-xs font-medium text-zinc-700 dark:text-zinc-300 border border-black/10 dark:border-zinc-50/10 bg-black/5 dark:bg-zinc-50/5 rounded-full">Docker</span>
-                    </div>
-                    <h3 class="text-3xl font-bold text-zinc-900 dark:text-zinc-100 tracking-tight">Camagru</h3>
-                    <p class="text-lg text-zinc-700 dark:text-zinc-300 font-medium">Application de montage photo et galerie sociale</p>
-                    <div class="space-y-4 text-zinc-600 dark:text-zinc-400 text-sm font-light leading-relaxed">
-                        <p><strong class="text-zinc-900 dark:text-zinc-200 font-semibold">Le défi :</strong> Développer un clone miniature d'Instagram "from scratch" sans framework, gérant la capture vidéo, l'assemblage de calques, les interactions sociales et l'envoi d'emails transactionnels.</p>
-                        <p><strong class="text-zinc-900 dark:text-zinc-200 font-semibold">Technique :</strong> Architecture MVC sur mesure et infrastructure conteneurisée (Docker). Flux webcam géré via l'API native <code>getUserMedia</code>, mais traitement et fusion des images calculés rigoureusement côté serveur. Sécurisation totale (authentification, hachage, failles XSS/SQLi) développée de zéro.</p>
-                    </div>
-                    <a href="https://github.com/jecointr/camagru" target="_blank" class="inline-flex items-center text-sm font-semibold text-zinc-900 dark:text-zinc-100 hover:text-zinc-500 dark:hover:text-zinc-400 smooth-hover mt-4 border-b border-zinc-900 dark:border-zinc-100 hover:border-zinc-500 dark:hover:border-zinc-400 pb-0.5">
-                        Découvrir le code source
-                    </a>
-                </div>
-                <div class="lg:w-1/2 w-full">
-                    <div class="bg-zinc-50 dark:bg-surface border border-black/5 dark:border-zinc-50/5 aspect-[4/3] rounded-2xl flex items-center justify-center overflow-hidden relative group transition-all duration-300 shadow-md hover:shadow-lg dark:shadow-none dark:hover:shadow-none">
-                        <div class="absolute inset-0 bg-gradient-to-t from-zinc-100 dark:from-background to-transparent opacity-50"></div>
-                        <span class="text-zinc-400 dark:text-zinc-600 font-light tracking-widest text-sm uppercase group-hover:scale-105 smooth-hover">[Interface Camagru]</span>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="contact" class="py-32 relative z-10 border-t border-black/5 dark:border-zinc-50/5 transition-colors duration-300">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-4xl font-bold text-zinc-900 dark:text-zinc-100 tracking-tight mb-6">
-                Construisons la suite.
-            </h2>
-            <p class="text-zinc-600 dark:text-zinc-400 font-light mb-12">
-                Je suis actuellement disponible pour de nouveaux défis techniques. Que ce soit pour concevoir une architecture from scratch ou optimiser l'existant.
-            </p>
-            <a href="mailto:votre-email@example.com" class="inline-flex items-center justify-center px-8 py-4 text-sm font-semibold text-zinc-50 dark:text-background bg-zinc-900 dark:bg-zinc-100 hover:bg-black dark:hover:bg-zinc-50 hover:scale-[1.02] active:scale-[0.98] shadow-[0_0_30px_rgba(0,0,0,0.15)] dark:shadow-[0_0_30px_rgba(255,255,255,0.15)] smooth-hover rounded-full">
-                Entrer en contact
-            </a>
-        </div>
-    </section>
-
-    <footer class="bg-zinc-50 dark:bg-background pt-12 pb-8 border-t border-black/5 dark:border-zinc-50/5 relative z-10 transition-colors duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-12">
-                <div class="flex-shrink-0">
-                    <a href="#" class="text-xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
-                        jecointr<span class="text-zinc-500">.dev</span>
-                    </a>
+    <main class="pt-24">
+        <section id="about" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 lg:pt-20 pb-24 flex flex-col-reverse lg:flex-row items-center gap-16 relative">
+            <div class="lg:w-3/5 space-y-8 relative z-10">
+                <div class="inline-flex items-center rounded-full px-3 py-1 text-xs font-medium text-zinc-600 dark:text-zinc-300 bg-black/5 dark:bg-zinc-50/5 border border-black/10 dark:border-zinc-50/10 backdrop-blur-md">
+                    <span class="w-1.5 h-1.5 rounded-full bg-zinc-600 dark:bg-zinc-300 mr-2 animate-pulse"></span> Disponible
                 </div>
                 
-                <div class="flex items-center space-x-8">
-                    <a href="https://github.com/jecointr" target="_blank" class="text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 smooth-hover">
-                        <span class="sr-only">GitHub</span>
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/></svg>
+                <h1 class="text-5xl lg:text-7xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-br from-zinc-900 via-zinc-600 to-zinc-400 dark:from-zinc-100 dark:via-zinc-300 dark:to-zinc-500 leading-[1.1] pb-2">
+                    Je crée des applications web d'exception.
+                </h1>
+                
+                <p class="text-lg text-zinc-600 dark:text-zinc-400 max-w-xl leading-relaxed font-light">
+                    Bonjour, je suis Jérémy, développeur Full-Stack. J'allie un design épuré à des architectures complexes (Node.js & React) pour concevoir des produits digitaux performants, scalables et durables.
+                </p>
+                
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="#projects" class="px-6 py-3 text-sm font-semibold rounded-full text-zinc-50 dark:text-background bg-zinc-900 dark:bg-zinc-100 hover:bg-black dark:hover:bg-zinc-50 hover:shadow-[0_0_20px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] smooth-hover">
+                        Explorer mes travaux
                     </a>
-                    <a href="https://www.linkedin.com/in/jeremy-cointre" target="_blank" class="text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 smooth-hover">
-                        <span class="sr-only">LinkedIn</span>
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    <a href="https://github.com/jecointr" target="_blank" class="px-6 py-3 text-sm font-medium rounded-full text-zinc-700 dark:text-zinc-300 bg-black/5 dark:bg-zinc-50/5 hover:bg-black/10 dark:hover:bg-zinc-50/10 border border-black/5 dark:border-zinc-50/5 backdrop-blur-md smooth-hover flex items-center gap-2 group">
+                        <svg class="h-4 w-4 text-zinc-600 dark:text-zinc-400 group-hover:text-zinc-900 dark:group-hover:text-zinc-100 smooth-hover" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/></svg>
+                        GitHub
                     </a>
                 </div>
             </div>
-
-            <div class="flex flex-col md:flex-row justify-between items-center text-xs text-zinc-500 dark:text-zinc-600 font-light">
-                <span>© 2026 jecointr.dev. Tous droits réservés.</span>
+            
+            <div class="lg:w-2/5 w-full flex justify-center lg:justify-end relative lg:-translate-x-12">
+                <div class="relative w-64 h-64 lg:w-72 lg:h-72 animate-[translate-y-[-10px]_ease-in-out_infinite_alternate]" style="animation: float 8s ease-in-out infinite;">
+                    <div class="absolute inset-0 bg-zinc-300/50 dark:bg-zinc-600/20 rounded-full blur-3xl opacity-50"></div>
+                    <div class="relative w-full h-full rounded-full border border-black/10 dark:border-zinc-50/10 bg-gradient-to-b from-black/5 dark:from-zinc-50/5 to-transparent backdrop-blur-xl shadow-[inset_0_0_40px_rgba(0,0,0,0.02)] dark:shadow-[inset_0_0_40px_rgba(255,255,255,0.02)] flex items-center justify-center p-2">
+                        <div class="w-full h-full rounded-full border border-black/5 dark:border-zinc-50/5 bg-zinc-50 dark:bg-background flex items-center justify-center overflow-hidden group">
+                            
+                            <img 
+                                src="./wa.jpeg"
+                                alt="Portrait de Jérémy" 
+                                class="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 smooth-hover"
+                            />
+                            
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </footer>
+        </section>
+
+        <section class="border-y border-black/5 dark:border-zinc-50/5 bg-zinc-100/50 dark:bg-surface/30 py-8 relative z-10 transition-colors duration-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 text-zinc-400 dark:text-zinc-500 font-medium">
+                    <span class="hover:text-zinc-900 dark:hover:text-zinc-200 smooth-hover cursor-default">TypeScript</span>
+                    <span class="hover:text-zinc-900 dark:hover:text-zinc-200 smooth-hover cursor-default">NestJS</span>
+                    <span class="hover:text-zinc-900 dark:hover:text-zinc-200 smooth-hover cursor-default">React</span>
+                    <span class="hover:text-zinc-900 dark:hover:text-zinc-200 smooth-hover cursor-default">PostgreSQL</span>
+                    <span class="hover:text-zinc-900 dark:hover:text-zinc-200 smooth-hover cursor-default">Docker</span>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="py-32 relative z-10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-16">
+                    <h2 class="text-3xl font-bold text-zinc-900 dark:text-zinc-100 tracking-tight">Expertise Technique</h2>
+                    <p class="mt-4 text-zinc-600 dark:text-zinc-400 font-light">Maîtrise de bout en bout de l'architecture web.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-zinc-50 dark:bg-surface/50 border border-black/5 dark:border-zinc-50/5 hover:border-black/15 dark:hover:border-zinc-50/15 shadow-md hover:shadow-lg dark:shadow-none dark:hover:shadow-none p-8 rounded-2xl smooth-hover group transition-all duration-300">
+                        <div class="w-10 h-10 mb-6 text-zinc-900 dark:text-zinc-100">
+                            <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" /></svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-3">Front-end Ingénierie</h3>
+                        <p class="text-zinc-600 dark:text-zinc-400 font-light text-sm leading-relaxed">Développement d'interfaces web réactives, fluides et "pixel-perfect" avec React, en plaçant l'expérience utilisateur (UX) au centre du code.</p>
+                    </div>
+
+                    <div class="bg-zinc-50 dark:bg-surface/50 border border-black/5 dark:border-zinc-50/5 hover:border-black/15 dark:hover:border-zinc-50/15 shadow-md hover:shadow-lg dark:shadow-none dark:hover:shadow-none p-8 rounded-2xl smooth-hover group transition-all duration-300">
+                        <div class="w-10 h-10 mb-6 text-zinc-900 dark:text-zinc-100">
+                            <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25-4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" /></svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-3">Architecture Back-end</h3>
+                        <p class="text-zinc-600 dark:text-zinc-400 font-light text-sm leading-relaxed">Conception d'API robustes, sécurisées et scalables sous Node.js. Optimisation avancée des bases de données relationnelles (PostgreSQL).</p>
+                    </div>
+
+                    <div class="bg-zinc-50 dark:bg-surface/50 border border-black/5 dark:border-zinc-50/5 hover:border-black/15 dark:hover:border-zinc-50/15 shadow-md hover:shadow-lg dark:shadow-none dark:hover:shadow-none p-8 rounded-2xl smooth-hover group transition-all duration-300">
+                        <div class="w-10 h-10 mb-6 text-zinc-900 dark:text-zinc-100">
+                            <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-3">Performance & Temps Réel</h3>
+                        <p class="text-zinc-600 dark:text-zinc-400 font-light text-sm leading-relaxed">Mise en place de WebSockets, transcodage vidéo à la volée, et optimisation des temps de réponse pour des applications hautement interactives.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-32 relative z-10 border-t border-black/5 dark:border-zinc-50/5 transition-colors duration-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-32">
+                
+                <div>
+                    <h2 class="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">Réalisations Phares</h2>
+                    <p class="mt-4 text-zinc-600 dark:text-zinc-400 font-light">Des systèmes complexes mis en production.</p>
+                </div>
+
+                <div id="hypertube" class="flex flex-col lg:flex-row items-center gap-16">
+                    <div class="lg:w-1/2 space-y-6">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 text-xs font-medium text-zinc-700 dark:text-zinc-300 border border-black/10 dark:border-zinc-50/10 bg-black/5 dark:bg-zinc-50/5 rounded-full">Typescript</span>
+                            <span class="px-3 py-1 text-xs font-medium text-zinc-700 dark:text-zinc-300 border border-black/10 dark:border-zinc-50/10 bg-black/5 dark:bg-zinc-50/5 rounded-full">NestJS</span>
+                            <span class="px-3 py-1 text-xs font-medium text-zinc-700 dark:text-zinc-300 border border-black/10 dark:border-zinc-50/10 bg-black/5 dark:bg-zinc-50/5 rounded-full">React</span>
+                            <span class="px-3 py-1 text-xs font-medium text-zinc-700 dark:text-zinc-300 border border-black/10 dark:border-zinc-50/10 bg-black/5 dark:bg-zinc-50/5 rounded-full">PostgreSQL</span>
+                            <span class="px-3 py-1 text-xs font-medium text-zinc-700 dark:text-zinc-300 border border-black/10 dark:border-zinc-50/10 bg-black/5 dark:bg-zinc-50/5 rounded-full">Docker</span>
+                            <span class="px-3 py-1 text-xs font-medium text-zinc-700 dark:text-zinc-300 border border-black/10 dark:border-zinc-50/10 bg-black/5 dark:bg-zinc-50/5 rounded-full">FFmpeg & BitTorrent</span>
+                        </div>
+                        <h3 class="text-3xl font-bold text-zinc-900 dark:text-zinc-100 tracking-tight">Hypertube</h3>
+                        <p class="text-lg text-zinc-700 dark:text-zinc-300 font-medium">Plateforme de streaming vidéo P2P</p>
+                        <div class="space-y-4 text-zinc-600 dark:text-zinc-400 text-sm font-light leading-relaxed">
+                            <p><strong class="text-zinc-900 dark:text-zinc-200 font-semibold">Le défi :</strong> Développer un clone de Netflix permettant de streamer des films directement depuis le réseau BitTorrent, avec authentification OAuth.</p>
+                            <p><strong class="text-zinc-900 dark:text-zinc-200 font-semibold">Technique :</strong> Moteur Node.js de téléchargement de fragments P2P. Transcodage vidéo à la volée via <code>fluent-ffmpeg</code> (flags <code>faststart</code>) pour une lecture HTTP instantanée sans attendre la fin du téléchargement.</p>
+                        </div>
+                        <a href="https://github.com/jecointr/hypertube" target="_blank" class="inline-flex items-center text-sm font-semibold text-zinc-900 dark:text-zinc-100 hover:text-zinc-500 dark:hover:text-zinc-400 smooth-hover mt-4 border-b border-zinc-900 dark:border-zinc-100 hover:border-zinc-500 dark:hover:border-zinc-400 pb-0.5">
+                            Découvrir le code source
+                        </a>
+                    </div>
+                    <div class="lg:w-1/2 w-full">
+                        <a href="https://placeholder-hypertube.com" target="_blank" class="bg-zinc-50 dark:bg-surface border border-black/5 dark:border-zinc-50/5 aspect-video rounded-2xl flex items-center justify-center overflow-hidden relative group transition-all duration-300 shadow-md hover:shadow-xl dark:shadow-none dark:hover:shadow-none block">
+                            <div class="absolute inset-0 bg-gradient-to-t from-zinc-100/50 dark:from-background/50 to-transparent z-10 pointer-events-none transition-opacity duration-300 group-hover:opacity-60"></div>
+
+                            <img
+                                src="hypertube.png"
+                                alt="Hypertube Interface"
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            />
+
+                            <div class="absolute inset-0 flex items-center justify-center z-20 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                                <span class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md border border-black/10 dark:border-zinc-50/10 shadow-lg text-sm font-semibold text-zinc-900 dark:text-zinc-100 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                                    Visiter le site
+                                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="matcha" class="flex flex-col lg:flex-row-reverse items-center gap-16">
+                    <div class="lg:w-1/2 space-y-6">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 text-xs font-medium text-zinc-700 dark:text-zinc-300 border border-black/10 dark:border-zinc-50/10 bg-black/5 dark:bg-zinc-50/5 rounded-full">Node.js</span>
+                            <span class="px-3 py-1 text-xs font-medium text-zinc-700 dark:text-zinc-300 border border-black/10 dark:border-zinc-50/10 bg-black/5 dark:bg-zinc-50/5 rounded-full">Express.js</span>
+                            <span class="px-3 py-1 text-xs font-medium text-zinc-700 dark:text-zinc-300 border border-black/10 dark:border-zinc-50/10 bg-black/5 dark:bg-zinc-50/5 rounded-full">React</span>
+                            <span class="px-3 py-1 text-xs font-medium text-zinc-700 dark:text-zinc-300 border border-black/10 dark:border-zinc-50/10 bg-black/5 dark:bg-zinc-50/5 rounded-full">PostgreSQL</span>
+                            <span class="px-3 py-1 text-xs font-medium text-zinc-700 dark:text-zinc-300 border border-black/10 dark:border-zinc-50/10 bg-black/5 dark:bg-zinc-50/5 rounded-full">Docker</span>
+                            <span class="px-3 py-1 text-xs font-medium text-zinc-700 dark:text-zinc-300 border border-black/10 dark:border-zinc-50/10 bg-black/5 dark:bg-zinc-50/5 rounded-full">Socket.io & WebRTC</span>
+                        </div>
+                        <h3 class="text-3xl font-bold text-zinc-900 dark:text-zinc-100 tracking-tight">Matcha</h3>
+                        <p class="text-lg text-zinc-700 dark:text-zinc-300 font-medium">Application de rencontre & Visio P2P</p>
+                        <div class="space-y-4 text-zinc-600 dark:text-zinc-400 text-sm font-light leading-relaxed">
+                            <p><strong class="text-zinc-900 dark:text-zinc-200 font-semibold">Le défi :</strong> Créer un algorithme de matching complet basé sur la distance, les intérêts et un score de popularité, avec messagerie instantanée.</p>
+                            <p><strong class="text-zinc-900 dark:text-zinc-200 font-semibold">Technique :</strong> Requêtes spatiales performantes via l'extension PostgreSQL <code>earthdistance</code>. Serveur de signaling WebRTC (via Socket.io et simple-peer) permettant des appels vidéo en temps réel de pair à pair.</p>
+                        </div>
+                        <a href="https://github.com/jecointr/matcha" target="_blank" class="inline-flex items-center text-sm font-semibold text-zinc-900 dark:text-zinc-100 hover:text-zinc-500 dark:hover:text-zinc-400 smooth-hover mt-4 border-b border-zinc-900 dark:border-zinc-100 hover:border-zinc-500 dark:hover:border-zinc-400 pb-0.5">
+                            Découvrir le code source
+                        </a>
+                    </div>
+                    <div class="lg:w-1/2 w-full">
+                        <a href="https://placeholder-matcha.com" target="_blank" class="bg-zinc-50 dark:bg-surface border border-black/5 dark:border-zinc-50/5 aspect-video rounded-2xl flex items-center justify-center overflow-hidden relative group transition-all duration-300 shadow-md hover:shadow-xl dark:shadow-none dark:hover:shadow-none block">
+                            <div class="absolute inset-0 bg-gradient-to-t from-zinc-100/50 dark:from-background/50 to-transparent z-10 pointer-events-none transition-opacity duration-300 group-hover:opacity-60"></div>
+
+                            <img
+                                src="matcha.png"
+                                alt="Matcha Interface"
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            />
+
+                            <div class="absolute inset-0 flex items-center justify-center z-20 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                                <span class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md border border-black/10 dark:border-zinc-50/10 shadow-lg text-sm font-semibold text-zinc-900 dark:text-zinc-100 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                                    Visiter le site
+                                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="camagru" class="flex flex-col lg:flex-row items-center gap-16">
+                    <div class="lg:w-1/2 space-y-6">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 text-xs font-medium text-zinc-700 dark:text-zinc-300 border border-black/10 dark:border-zinc-50/10 bg-black/5 dark:bg-zinc-50/5 rounded-full">PHP</span>
+                            <span class="px-3 py-1 text-xs font-medium text-zinc-700 dark:text-zinc-300 border border-black/10 dark:border-zinc-50/10 bg-black/5 dark:bg-zinc-50/5 rounded-full">Custom MVC</span>
+                            <span class="px-3 py-1 text-xs font-medium text-zinc-700 dark:text-zinc-300 border border-black/10 dark:border-zinc-50/10 bg-black/5 dark:bg-zinc-50/5 rounded-full">Vanilla JS</span>
+                            <span class="px-3 py-1 text-xs font-medium text-zinc-700 dark:text-zinc-300 border border-black/10 dark:border-zinc-50/10 bg-black/5 dark:bg-zinc-50/5 rounded-full">MariaDB</span>
+                            <span class="px-3 py-1 text-xs font-medium text-zinc-700 dark:text-zinc-300 border border-black/10 dark:border-zinc-50/10 bg-black/5 dark:bg-zinc-50/5 rounded-full">Docker</span>
+                        </div>
+                        <h3 class="text-3xl font-bold text-zinc-900 dark:text-zinc-100 tracking-tight">Camagru</h3>
+                        <p class="text-lg text-zinc-700 dark:text-zinc-300 font-medium">Application de montage photo et galerie sociale</p>
+                        <div class="space-y-4 text-zinc-600 dark:text-zinc-400 text-sm font-light leading-relaxed">
+                            <p><strong class="text-zinc-900 dark:text-zinc-200 font-semibold">Le défi :</strong> Développer un clone miniature d'Instagram "from scratch" sans framework, gérant la capture vidéo, l'assemblage de calques, les interactions sociales et l'envoi d'emails transactionnels.</p>
+                            <p><strong class="text-zinc-900 dark:text-zinc-200 font-semibold">Technique :</strong> Architecture MVC sur mesure et infrastructure conteneurisée (Docker). Flux webcam géré via l'API native <code>getUserMedia</code>, mais traitement et fusion des images calculés rigoureusement côté serveur. Sécurisation totale (authentification, hachage, failles XSS/SQLi) développée de zéro.</p>
+                        </div>
+                        <a href="https://github.com/jecointr/camagru" target="_blank" class="inline-flex items-center text-sm font-semibold text-zinc-900 dark:text-zinc-100 hover:text-zinc-500 dark:hover:text-zinc-400 smooth-hover mt-4 border-b border-zinc-900 dark:border-zinc-100 hover:border-zinc-500 dark:hover:border-zinc-400 pb-0.5">
+                            Découvrir le code source
+                        </a>
+                    </div>
+                    <div class="lg:w-1/2 w-full">
+                        <a href="https://placeholder-camagru.com" target="_blank" class="bg-zinc-50 dark:bg-surface border border-black/5 dark:border-zinc-50/5 aspect-video rounded-2xl flex items-center justify-center overflow-hidden relative group transition-all duration-300 shadow-md hover:shadow-xl dark:shadow-none dark:hover:shadow-none block">
+                            <div class="absolute inset-0 bg-gradient-to-t from-zinc-100/50 dark:from-background/50 to-transparent z-10 pointer-events-none transition-opacity duration-300 group-hover:opacity-60"></div>
+
+                            <img
+                                src="camagru.png"
+                                alt="Camagru Interface"
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            />
+
+                            <div class="absolute inset-0 flex items-center justify-center z-20 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                                <span class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md border border-black/10 dark:border-zinc-50/10 shadow-lg text-sm font-semibold text-zinc-900 dark:text-zinc-100 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                                    Visiter le site
+                                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact" class="py-32 relative z-10 border-t border-black/5 dark:border-zinc-50/5 transition-colors duration-300">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-bold text-zinc-900 dark:text-zinc-100 tracking-tight mb-6">
+                    Construisons la suite.
+                </h2>
+                <p class="text-zinc-600 dark:text-zinc-400 font-light mb-12">
+                    Je suis actuellement disponible pour de nouveaux défis techniques. Que ce soit pour concevoir une architecture from scratch ou optimiser l'existant.
+                </p>
+                <a href="mailto:jeremycointre@me.com" class="inline-flex items-center justify-center px-8 py-4 text-sm font-semibold text-zinc-50 dark:text-background bg-zinc-900 dark:bg-zinc-100 hover:bg-black dark:hover:bg-zinc-50 hover:scale-[1.02] active:scale-[0.98] shadow-[0_0_30px_rgba(0,0,0,0.15)] dark:shadow-[0_0_30px_rgba(255,255,255,0.15)] smooth-hover rounded-full">
+                    Entrer en contact
+                </a>
+            </div>
+        </section>
+
+        <footer class="bg-zinc-50 dark:bg-background py-8 border-t border-black/5 dark:border-zinc-50/5 relative z-10 transition-colors duration-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+
+                    <div class="flex-1 flex justify-center md:justify-start">
+                        <a href="#" class="text-xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">jecointr<span class="text-zinc-500">.dev</span></a>
+                    </div>
+
+                    <div class="flex-shrink-0 text-xs text-zinc-500 dark:text-zinc-600 font-light">
+                        <span>© 2026 jecointr.dev. Tous droits réservés.</span>
+                    </div>
+
+                    <div class="flex-1 flex items-center justify-center md:justify-end space-x-8">
+                        <a href="https://github.com/jecointr" target="_blank" class="text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 smooth-hover">
+                            <span class="sr-only">GitHub</span>
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/jeremy-cointre" target="_blank" class="text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 smooth-hover">
+                            <span class="sr-only">LinkedIn</span>
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+    </main>
 
     <script>
+        // Gestion du Thème
         const themeToggleBtn = document.getElementById('theme-toggle');
-
         themeToggleBtn.addEventListener('click', function() {
             if (document.documentElement.classList.contains('dark')) {
                 document.documentElement.classList.remove('dark');
@@ -348,6 +413,76 @@
                 document.documentElement.classList.add('dark');
                 localStorage.setItem('color-theme', 'dark');
             }
+        });
+
+        // Gestion de la Timeline de Navigation
+        document.addEventListener('DOMContentLoaded', () => {
+            const fill = document.getElementById('progress-fill');
+            const indicator = document.getElementById('progress-indicator');
+            const checkpoints = document.querySelectorAll('.checkpoint');
+            
+            // Hauteur du header sticky pour décaler l'activation (96px = h-24)
+            const headerOffset = 96; 
+
+            function calculateTimeline() {
+                const scrollY = window.scrollY;
+                const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+                let currentProgress = maxScroll > 0 ? (scrollY / maxScroll) * 100 : 0;
+                
+                // Limites de sécurité
+                currentProgress = Math.max(0, Math.min(100, currentProgress));
+                
+                // Mettre à jour la barre et le texte
+                fill.style.width = `${currentProgress}%`;
+                indicator.innerText = `${Math.round(currentProgress)}%`;
+                indicator.style.left = `${currentProgress}%`;
+
+                // Placer et animer les checkpoints
+                checkpoints.forEach(cp => {
+                    const targetId = cp.getAttribute('data-target');
+                    const targetEl = document.getElementById(targetId);
+                    
+                    if (targetEl) {
+                        // Position du point sur la barre (pourcentage de scroll requis pour l'atteindre)
+                        let targetScroll = targetEl.offsetTop - headerOffset;
+                        let targetPercent = (targetScroll / maxScroll) * 100;
+                        targetPercent = Math.max(0, Math.min(100, targetPercent));
+                        
+                        // Assigne la position physique du bouton de navigation sur la ligne
+                        cp.style.left = `${targetPercent}%`;
+
+                        // Allumer le point si on l'a dépassé
+                        const dot = cp.querySelector('.indicator-dot');
+                        const label = cp.querySelector('.label-text');
+                        
+                        if (currentProgress >= targetPercent) {
+                            dot.classList.add('bg-zinc-900', 'dark:bg-zinc-100');
+                            dot.classList.remove('bg-zinc-300', 'dark:bg-zinc-700');
+                            label.classList.add('text-zinc-900', 'dark:text-zinc-100');
+                            label.classList.remove('text-zinc-400', 'dark:text-zinc-500');
+                        } else {
+                            dot.classList.remove('bg-zinc-900', 'dark:bg-zinc-100');
+                            dot.classList.add('bg-zinc-300', 'dark:bg-zinc-700');
+                            label.classList.remove('text-zinc-900', 'dark:text-zinc-100');
+                            label.classList.add('text-zinc-400', 'dark:text-zinc-500');
+                        }
+                    }
+                });
+            }
+
+            let ticking = false;
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    window.requestAnimationFrame(() => {
+                        calculateTimeline();
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+
+            window.addEventListener('resize', calculateTimeline);
+            setTimeout(calculateTimeline, 150);
         });
     </script>
 </body>
