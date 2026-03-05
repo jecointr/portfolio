@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+/* Class-based dark mode: matches both .dark element and its descendants */
+@custom-variant dark (&:is(.dark, .dark *));
+
+/* Design tokens (replaces tailwind.config.ts) */
+@theme {
+  --font-sans: var(--font-plus-jakarta-sans), sans-serif;
+  --color-background: #09090B;
+  --color-surface: #18181B;
+}
+
+/* Custom global styles */
+html {
+  overflow-y: scroll;
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
+.bg-grid {
+  background-size: 30px 30px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+}
+
+.dark .bg-grid {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+.smooth-hover {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes float {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}

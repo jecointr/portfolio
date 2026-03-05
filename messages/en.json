@@ -1,0 +1,56 @@
+{
+  "meta": {
+    "title": "jecointr.dev | Software Engineer"
+  },
+  "nav": {
+    "about": "About",
+    "services": "Expertise",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "available": "Available for work",
+    "headline": "I craft exceptional web applications.",
+    "bio": "Hi, I'm Jérémy, a Full-Stack developer. I combine clean design with complex architectures (Node.js & React) to build high-performance, scalable, and sustainable digital products.",
+    "cta_work": "Explore my work",
+    "portrait_alt": "Portrait of Jérémy"
+  },
+  "services": {
+    "title": "Technical Expertise",
+    "subtitle": "End-to-end mastery of web architecture.",
+    "frontend_title": "Front-end Engineering",
+    "frontend_desc": "Developing responsive, fluid, and \"pixel-perfect\" web interfaces with React, placing User Experience (UX) at the core of the code.",
+    "backend_title": "Back-end Architecture",
+    "backend_desc": "Designing robust, secure, and scalable APIs using Node.js. Advanced optimization of relational databases (PostgreSQL).",
+    "perf_title": "Performance & Real-Time",
+    "perf_desc": "Implementing WebSockets, on-the-fly video transcoding, and optimizing response times for highly interactive applications."
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "subtitle": "Complex systems brought to production.",
+    "view_source": "View source code",
+    "visit_website": "Visit website",
+    "challenge_label": "The challenge:",
+    "technical_label": "Technical:",
+    "hypertube_subtitle": "P2P Video Streaming Platform",
+    "hypertube_challenge": "Develop a Netflix clone allowing movie streaming directly from the BitTorrent network, with OAuth authentication.",
+    "hypertube_technical": "Node.js engine for downloading P2P fragments. On-the-fly video transcoding via <code>fluent-ffmpeg</code> (using <code>faststart</code> flags) for instant HTTP playback without waiting for the download to finish.",
+    "matcha_subtitle": "Dating App & P2P Video Chat",
+    "matcha_challenge": "Create a comprehensive matching algorithm based on distance, interests, and a popularity score, featuring instant messaging.",
+    "matcha_technical": "High-performance spatial queries via the PostgreSQL <code>earthdistance</code> extension. WebRTC signaling server (via Socket.io and simple-peer) enabling real-time peer-to-peer video calls.",
+    "camagru_subtitle": "Photo editing app and social gallery",
+    "camagru_challenge": "Develop a miniature Instagram clone \"from scratch\" without any framework, managing video capture, layer assembly, social interactions, and transactional emails.",
+    "camagru_technical": "Custom MVC architecture and containerized infrastructure (Docker). Webcam stream handled via native <code>getUserMedia</code> API, but image processing and merging strictly calculated server-side. Total security (authentication, hashing, XSS/SQLi flaws) built from the ground up.",
+    "hypertube_img_alt": "Hypertube Interface",
+    "matcha_img_alt": "Matcha Interface",
+    "camagru_img_alt": "Camagru Interface"
+  },
+  "contact": {
+    "title": "Let's build what's next.",
+    "subtitle": "I am currently available for new technical challenges. Whether it's designing an architecture from scratch or optimizing an existing one.",
+    "cta": "Get in touch"
+  },
+  "footer": {
+    "copyright": "© 2026 jecointr.dev. All rights reserved."
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "meta": {
+    "title": "jecointr.dev | Ingeniero de Software"
+  },
+  "nav": {
+    "about": "Sobre mí",
+    "services": "Experiencia",
+    "projects": "Proyectos",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "available": "Disponible para trabajar",
+    "headline": "Creo aplicaciones web excepcionales.",
+    "bio": "Hola, soy Jérémy, desarrollador Full-Stack. Combino un diseño limpio con arquitecturas complejas (Node.js & React) para crear productos digitales escalables, de alto rendimiento y sostenibles.",
+    "cta_work": "Ver mis proyectos",
+    "portrait_alt": "Retrato de Jérémy"
+  },
+  "services": {
+    "title": "Experiencia Técnica",
+    "subtitle": "Dominio de la arquitectura web de principio a fin.",
+    "frontend_title": "Ingeniería Front-end",
+    "frontend_desc": "Desarrollo de interfaces web responsivas, fluidas y \"pixel-perfect\" con React, situando la Experiencia de Usuario (UX) en el centro del código.",
+    "backend_title": "Arquitectura Back-end",
+    "backend_desc": "Diseño de APIs robustas, seguras y escalables utilizando Node.js. Optimización avanzada de bases de datos relacionales (PostgreSQL).",
+    "perf_title": "Rendimiento y Tiempo Real",
+    "perf_desc": "Implementación de WebSockets, transcodificación de vídeo al vuelo y optimización de tiempos de respuesta para aplicaciones altamente interactivas."
+  },
+  "projects": {
+    "title": "Proyectos Destacados",
+    "subtitle": "Sistemas complejos llevados a producción.",
+    "view_source": "Ver código fuente",
+    "visit_website": "Visitar sitio web",
+    "challenge_label": "El reto:",
+    "technical_label": "Técnica:",
+    "hypertube_subtitle": "Plataforma de Streaming de Vídeo P2P",
+    "hypertube_challenge": "Desarrollar un clon de Netflix que permita el streaming de películas directamente desde la red BitTorrent, con autenticación OAuth.",
+    "hypertube_technical": "Motor Node.js para la descarga de fragmentos P2P. Transcodificación de vídeo al vuelo vía <code>fluent-ffmpeg</code> (usando flags <code>faststart</code>) para reproducción HTTP instantánea sin esperar a que finalice la descarga.",
+    "matcha_subtitle": "App de Citas y Videochat P2P",
+    "matcha_challenge": "Crear un algoritmo de emparejamiento exhaustivo basado en distancia, intereses y un factor de popularidad, con mensajería instantánea.",
+    "matcha_technical": "Consultas espaciales de alto rendimiento a través de la extensión PostgreSQL <code>earthdistance</code>. Servidor de señalización WebRTC (vía Socket.io y simple-peer) que permite videollamadas peer-to-peer en tiempo real.",
+    "camagru_subtitle": "App de edición de fotos y galería social",
+    "camagru_challenge": "Desarrollar un clon en miniatura de Instagram \"desde cero\" sin ningún framework, gestionando captura de vídeo, ensamblaje de capas, interacciones sociales y correos transaccionales.",
+    "camagru_technical": "Arquitectura MVC a medida e infraestructura en contenedores (Docker). Flujo de webcam gestionado mediante la API nativa <code>getUserMedia</code>, pero el procesamiento y la fusión de imágenes se calculan estrictamente en el lado del servidor. Seguridad total (autenticación, hashing, vulnerabilidades XSS/SQLi) construida desde la base.",
+    "hypertube_img_alt": "Interfaz Hypertube",
+    "matcha_img_alt": "Interfaz Matcha",
+    "camagru_img_alt": "Interfaz Camagru"
+  },
+  "contact": {
+    "title": "Construyamos lo que viene.",
+    "subtitle": "Actualmente estoy disponible para nuevos retos técnicos. Ya sea diseñando una arquitectura desde cero u optimizando una existente.",
+    "cta": "Contáctame"
+  },
+  "footer": {
+    "copyright": "© 2026 jecointr.dev. Todos los derechos reservados."
+  }
+}
